@@ -1,0 +1,88 @@
+{
+  "destination": "Madrid, Spain",
+  "total_days": 1,
+  "main_theme": "Historical and Cultural",
+  "daily_itinerary": [
+    {
+      "date": "2025-01-01",
+      "day_name": "Art, Architecture, and Sunset Views",
+      "activities": [
+        {
+          "name": "Visit to the Museo Nacional del Prado (Prado National Museum)",
+          "short_description": "See masterpieces by Goya, Velázquez, and El Greco. It's an essential stop in Madrid.",
+          "location": "Paseo del Prado s/n, 28014 Madrid",
+          "start_time": "10:00",
+          "end_time": "13:00",
+          "estimated_cost": "15€"
+        },
+        {
+          "name": "Lunch near the Barrio de las Letras (Literary Quarter)",
+          "short_description": "Enjoy tapas and traditional Spanish food in a historic, literary setting.",
+          "location": "Barrio de las Letras",
+          "start_time": "13:30",
+          "end_time": "14:45",
+          "estimated_cost": "25€"
+        },
+        {
+          "name": "Explore Plaza Mayor and the San Miguel Market",
+          "short_description": "Walk through the main square, then sample Spanish delicacies at the famous food market.",
+          "location": "Plaza Mayor, 28012 Madrid",
+          "start_time": "15:00",
+          "end_time": "16:15",
+          "estimated_cost": "5€ (market samples)"
+        },
+        {
+          "name": "Exploration of the Royal Palace (Palacio Real) and Plaza de Oriente",
+          "short_description": "Tour the official residence of the Spanish monarchy and its adjacent grand square.",
+          "location": "C. de Bailén, s/n, 28071 Madrid",
+          "start_time": "16:45",
+          "end_time": "18:15",
+          "estimated_cost": "12€"
+        },
+        {
+          "name": "Sunset View from the Temple of Debod (Templo de Debod)",
+          "short_description": "Watch the sunset from this ancient Egyptian temple relocated to Madrid.",
+          "location": "C. de Ferraz, 1, 28008 Madrid",
+          "start_time": "18:45",
+          "end_time": "19:45",
+          "estimated_cost": "Free"
+        },
+        {
+          "name": "Dinner and Drinks in the La Latina Neighborhood",
+          "short_description": "Experience authentic Madrid nightlife and tapas culture in a lively area.",
+          "location": "La Latina (near Cava Baja Street)",
+          "start_time": "20:30",
+          "end_time": "22:00",
+          "estimated_cost": "30€"
+        }
+      ],
+      "logistics_between_activities": [
+        {
+          "transport_type": "On foot",
+          "estimated_duration": "5 min",
+          "additional_notes": "A short walk from the Prado to the Barrio de las Letras for lunch."
+        },
+        {
+          "transport_type": "On foot",
+          "estimated_duration": "10 min",
+          "additional_notes": "Walk through the center to reach the historic Plaza Mayor."
+        },
+        {
+          "transport_type": "On foot",
+          "estimated_duration": "15 min",
+          "additional_notes": "A pleasant walk from Plaza Mayor to the Royal Palace area."
+        },
+        {
+          "transport_type": "On foot",
+          "estimated_duration": "15 min",
+          "additional_notes": "Walk through the gardens/parks towards the Temple of Debod for the sunset."
+        },
+        {
+          "transport_type": "Metro L10 (Ópera to La Latina)",
+          "estimated_duration": "20 min",
+          "additional_notes": "Take the metro or a 25-minute walk to La Latina for dinner."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Entornos Virtuales
+venv/
+.venv/
+env/
+
+# Archivos de Streamlit/Python que no deben subir
+__pycache__/
+*.pyc
+
+# Archivos de configuración (¡IMPORTANTE! No subir el .env real con keys)
+.env
+
+# Caché y logs de Streamlit
+.streamlit/
+
+.vscode/
