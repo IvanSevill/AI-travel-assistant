@@ -1,40 +1,95 @@
-# 🗺️ AI Travel Itinerary Planner (Gemini & Streamlit)
+# AI Travel Itinerary Planner (Gemini & Streamlit)
 
-Esta es una aplicación web interactiva desarrollada con **Streamlit** que genera itinerarios de viaje detallados día por día. Utiliza el modelo **Google Gemini** para la planificación, la validación estricta de la salida con Pydantic/JSON Schema, y se integra con las APIs de Google para enriquecer la experiencia.
-
-## ✨ Características Principales
-
-* **Planificación con IA:** Genera itinerarios detallados utilizando el modelo **Gemini** (vía `response_schema` forzada).
-* **Validación Estricta:** Implementación de modelos de datos (Pydantic) para asegurar que la salida JSON de la IA es siempre válida.
-* **Integración de Herramientas (Tools):** Utiliza las APIs de Google Maps/Places para obtener detalles en tiempo real de ubicaciones y calcular tiempos de viaje entre actividades.
-* **Audio Resumen (TTS):** Genera resúmenes de audio de alta calidad para cada día utilizando la API de **Google Cloud Text-to-Speech (TTS)**.
-* **UI Dinámica:** Interfaz de usuario intuitiva con Streamlit, incluyendo pestañas por día y reproductor de audio.
-
-## ⚙️ Tecnologías y Requisitos
-
-La aplicación requiere la configuración de varias claves de API de Google para funcionar completamente.
-
-### Requisitos Locales
-
-* **Python 3.10+**
-* **Git**
-
-### Claves de API Necesarias
-
-Debes obtener y configurar las siguientes claves:
-
-1.  **GEMINI_API_KEY:** Para la planificación de itinerarios y la generación de texto del resumen diario (`agents.py`).
-2.  **GOOGLE_MAPS_API_KEY:** Para las funciones de `get_location_details` y `calculate_travel_time` (`tools.py`).
-3.  **GOOGLE CLOUD CREDENTIALS:** Para usar la API de Text-to-Speech (TTS). Esto requiere configurar la **API de Cloud Text-to-Speech** en Google Cloud Platform y la autenticación de la cuenta de servicio (típicamente a través de `gcloud auth application-default login`).
+This repository contains an interactive web application built with **Streamlit** that generates detailed, day-by-day travel itineraries using the **Google Gemini** model.  
+The app ensures structured and validated output through **Pydantic/JSON Schema** and integrates **Google APIs** for real-world location and travel data.
 
 ---
 
-## 📦 Instalación y Configuración
+## Academic Project Context
 
-### 1. Clonar el Repositorio
+This project was developed for the **Artificial Intelligence Laboratory** course.  
+Its main objective is to demonstrate the practical use of **Large Language Models (LLMs)** through **Function/Tool Calling** and **Structured Output Generation**.
 
-Abre tu terminal o CMD:
+### Core AI Concepts Demonstrated
+
+- **Structured Reasoning:** Enforcing consistent JSON output using Pydantic schemas.  
+- **Agentic Workflow:** Using two agents (Planner Agent and Summarizer Agent) in a closed feedback loop.  
+- **External Knowledge Integration:** Incorporating real-world data through API calls to improve itinerary accuracy.
+
+---
+
+## Key Features
+
+- **AI Planning (Gemini):** Generates complete daily itineraries using the Gemini model with strict response schema validation.  
+- **Structured Validation:** Ensures reliable AI responses using Pydantic data models.  
+- **Tool Integration (Maps & Places):** Retrieves real-time location data and travel durations using Google APIs.  
+- **Audio Summaries (TTS):** Produces daily voice summaries using the Google Cloud Text-to-Speech API.  
+- **Streamlit Interface:** Provides a clean, responsive UI with day-based tabs and embedded audio playback.
+
+---
+
+## Tools and Function Calling
+
+The application includes several external Python functions (`tools.py`) that the Gemini agent can call to retrieve real-world data.
+
+| Tool Function | API Used | Description |
+| :------------- | :-------- | :----------- |
+| `get_location_details(place_name)` | Google Places API | Retrieves type, rating, address, and open status for a given location. |
+| `calculate_travel_time(from, to)` | Google Directions API | Estimates travel time and transportation method between two points. |
+
+---
+
+## Dependencies and Requirements
+
+### Local Requirements
+
+- Python 3.10 or higher  
+- Git
+
+### Required API Keys
+
+You will need the following credentials for the app to function properly:
+
+1. **GEMINI_API_KEY:** Used by the planning and summarizing agents (`agents.py`).  
+2. **GOOGLE_MAPS_API_KEY:** Used to query Google Maps and Places APIs (`tools.py`).  
+3. **GOOGLE CLOUD CREDENTIALS:** Required for the Text-to-Speech (TTS) API.  
+   - Enable the **Cloud Text-to-Speech API** in Google Cloud Platform.  
+   - Authenticate using `gcloud auth application-default login` or provide a Service Account JSON key.
+
+---
+
+## Installation and Setup
+
+### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/tu-usuario/nombre-del-repositorio.git](https://github.com/tu-usuario/nombre-del-repositorio.git)
-cd nombre-del-repositorio
+git clone https://github.com/IvanSevill/AI-travel-assistant.git
+cd AI-travel-assistant
+```
+
+### 2. Create a Virtual Environment
+
+#### Windows (PowerShell/CMD):
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+#### macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
+Rename the plantilla.env to .env file in the project root directory
+
+### 5. Run the Application
+
+```bash
+streamlit run app.py
+```
